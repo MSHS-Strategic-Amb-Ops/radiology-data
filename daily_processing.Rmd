@@ -137,15 +137,15 @@ daily_process <- function(data){
 ## Processed data output =======================================================
 daily_data_processed <- daily_process(daily_data)
 
-# # Import in radiology_historical_data ------------------------------------------
-# repo_data <- readRDS(paste0(dir_path,"/radiology_historical_data.rds"))
-# 
-# # Merge daily processed data with historical data ------------------------------
-# merged_data <- bind_rows(repo_data, daily_data_processed)
-# merged_data <- distinct(merged_data)
-# 
-# # Write out appended radiology data --------------------------------------------
-# saveRDS(merged_data, paste0(dir_path, "/radiology_historical_data.rds"))
+# Import in radiology_historical_data ------------------------------------------
+repo_data <- readRDS(paste0(dir_path,"/radiology_historical_data.rds"))
+
+# Merge daily processed data with historical data ------------------------------
+merged_data <- bind_rows(repo_data, daily_data_processed)
+merged_data <- distinct(merged_data)
+
+# Write out appended radiology data --------------------------------------------
+saveRDS(merged_data, paste0(dir_path, "/radiology_historical_data.rds"))
 
 ```
 
