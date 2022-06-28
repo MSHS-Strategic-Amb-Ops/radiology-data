@@ -85,10 +85,10 @@ suppressMessages({
 
 ```{r Daily Processing}
 
-dir_path <- "/data/Radiology/data_upload"
+dir_path <- "/data/Radiology"
 
 # 1. Read in daily radiology data -------------------------------------------------
-daily_data <- read_xls(list.files(dir_path, 
+daily_data <- read_xls(list.files("/data/Radiology/data_upload",
                            pattern="mshp_Ambulatory.*\\.xls$", 
                            full.names=TRUE)) # Read in data that starts with "mshs_Ambulatory"
 
